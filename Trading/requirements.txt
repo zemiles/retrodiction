@@ -1,0 +1,11 @@
+# 한국투자증권 Open API 자동매매 봇
+# Python 3.9 이상 필요
+
+flask>=3.0.0
+requests>=2.28.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+PyYAML>=6.0
+python-dotenv>=1.0.0
+schedule>=1.2.0
+pycryptodome>=3.19.0

@@ -1,0 +1,31 @@
+# 한국투자증권 Open API 설정 파일
+# 이 파일을 kis_devlp.yaml로 복사한 후 본인 정보를 입력하세요.
+
+# 실전투자 (실제 거래 시 사용)
+my_app: "실전투자_앱키"
+my_sec: "실전투자_앱시크릿"
+
+# 모의투자 (테스트 시 사용 - 권장)
+paper_app: "모의투자_앱키"
+paper_sec: "모의투자_앱시크릿"
+
+# HTS ID (KIS Developers 고객 ID)
+my_htsid: "사용자_HTS_ID"
+
+# 계좌번호 앞 8자리
+my_acct_stock: "12345678"
+my_acct_future: "12345678"
+my_paper_stock: "12345678"
+my_paper_future: "12345678"
+
+# 계좌번호 뒤 2자리 (01: 종합계좌)
+my_prod: "01"
+
+# API 도메인 (변경 불필요)
+prod: "https://openapi.koreainvestment.com:9443"
+ops: "ws://ops.koreainvestment.com:21000"
+vps: "https://openapivts.koreainvestment.com:29443"
+vops: "ws://ops.koreainvestment.com:31000"
+
+# User-Agent (Chrome F12 > Console > navigator.userAgent)
+my_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"

@@ -1,0 +1,39 @@
+# 자동매매 봇 설정
+# API 설정은 config/kis_devlp.yaml에서 관리
+
+# 매매 전략 설정
+strategy:
+  type: "rsi"
+  rsi_period: 14
+  buy_threshold: 30    # RSI 30 이하 시 매수 (과매도)
+  sell_threshold: 70   # RSI 70 이상 시 매도 (과매수)
+  stop_loss: -0.03     # -3% 손절
+  take_profit: 0.05     # +5% 익절
+
+# 관심 종목 (종목코드 6자리)
+stocks:
+  - "005930"   # 삼성전자
+  - "000660"   # SK하이닉스
+
+# 리스크 관리
+risk:
+  max_position_per_stock: 1000000   # 종목당 최대 100만원
+  max_total_position: 5000000      # 총 포지션 최대 500만원
+  check_interval_seconds: 60      # 시세 체크 간격 (초)
+
+# 실행 모드 (vps: 모의투자, prod: 실전투자)
+mode: "vps"
+
+# 시각화 (차트 저장 경로, null이면 화면 표시)
+visualization:
+  save_charts: true
+  output_dir: "charts_output"
+
+# 백테스팅
+backtest:
+  initial_cash: 10000000      # 초기 자본 (1천만원)
+  max_position_pct: 0.2      # 종목당 최대 투자 비율 (20%)
+  commission_rate: 0.00015    # 수수료율 (0.015%)
+  days: 100                   # 조회 기간 (일)
+  auto_validate: true         # 시작 시 자동 전략 검증 (백테스트)
+  block_on_negative: true    # 수익률 음수 시 매매 차단 (실전투자에서만)
